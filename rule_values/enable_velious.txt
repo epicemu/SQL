@@ -1,0 +1,31 @@
+#Set to 3=Velious, or 2=Kunark, or 1=Classic - if you chose Kunark or Classic you will need to remove additional rows from the zone table.
+UPDATE variables SET value = 3 WHERE varname = 'Expansions';
+
+#Set to Velious (rules)
+
+UPDATE rule_values SET rule_value = 3 WHERE rule_name = 'World:ExpansionSettings'; 
+UPDATE rule_values SET rule_value = 60 WHERE rule_name = 'Character:MaxLevel';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'Character:RespawnFromHover';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'Guild:PlayerCreationAllowed';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'Spells:LiveLikeFocusEffects';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'World:ClearTempMerchantList';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'World:EnableReturnHomeButton';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'World:EnableTutorialButton';
+UPDATE rule_values SET rule_value = false WHERE rule_name = 'Character:UseRaceClassExpBonuses';
+UPDATE rule_values SET rule_value = 604800000 WHERE rule_name ='Character:CorpseDecayTimerMS';
+UPDATE rule_values SET rule_value = 1 WHERE rule_name = 'World:ClearTempMerchantlist';
+UPDATE rule_values SET rule_value = 2 WHERE rule_name = 'Merchant:PriceBonusPct';
+
+#Backup Zone Files then Remove unneeded zones
+CREATE TABLE zone_backup LIKE zone;
+INSERT zone_backup SELECT * FROM zone;
+DELETE FROM zone WHERE zoneidnumber > 130 AND zoneidnumber <= 999;
+DELETE FROM zone WHERE id = 423;
+#Remove Alt.Adv points that cost 0 (Veteran Junk)
+UPDATE altadv_vars SET cost = 1 WHERE cost = 0;
+
+#Crit Chances
+UPDATE rule_values SET rule_value = 0 WHERE rule_name = 'Combat:BaseCritChance';
+UPDATE rule_values SET rule_value = 4 WHERE rule_name = 'Combat:WarBerBaseCritChance';
+UPDATE rule_values SET rule_value = 20 WHERE rule_name = 'Combat:BerserkBaseCritChance';
+UPDATE rule_values SET rule_value = 0 WHERE rule_name = 'Combat:ClientBaseCritChance';
