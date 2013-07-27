@@ -1,0 +1,5 @@
+### STRINGED INSTRUMENTS skill 49
+
+#BRD8
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 49 AND level <=46 AND class = 8;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 49 AND level >46 AND level <=60 AND class = 8;

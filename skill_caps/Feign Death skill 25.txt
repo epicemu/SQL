@@ -1,0 +1,5 @@
+###FEIGN DEATH skill 25
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 23 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 23 AND level >39 AND level <=60 AND class = 7;

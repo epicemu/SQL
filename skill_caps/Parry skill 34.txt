@@ -1,0 +1,30 @@
+###PARRY SKILL 34
+
+#WAR1
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 34 AND level <=39 AND class = 1;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 34 AND level >39 AND level <=50 AND class = 1;
+UPDATE skill_caps SET cap = 230 WHERE skillID = 34 AND level >50 AND level <=60 AND class = 1;
+
+#PAL3
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 34 AND level <=34 AND class = 3;
+UPDATE skill_caps SET cap = 175 WHERE skillID = 34 AND level >34 AND level <=50 AND class = 3;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 34 AND level >50 AND level <=60 AND class = 3;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 34 AND level <=36 AND class = 4;
+UPDATE skill_caps SET cap = 185 WHERE skillID = 34 AND level >36 AND level <=50 AND class = 4;
+UPDATE skill_caps SET cap = 220 WHERE skillID = 34 AND level >50 AND level <=60 AND class = 4;
+
+#SHD5
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 34 AND level <=34 AND class = 5;
+UPDATE skill_caps SET cap = 175 WHERE skillID = 34 AND level >34 AND level <=50 AND class = 5;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 34 AND level >50 AND level <=60 AND class = 5;
+
+#BRD8
+UPDATE skill_caps SET cap = 0 WHERE skillID = 34 AND level <=52 AND class = 8;
+UPDATE skill_caps SET cap = 75 WHERE skillID = 34 AND level >53 AND level <=60 AND class = 8;
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 34 AND level <=39 AND class = 9;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 34 AND level >39 AND level <=50 AND class = 9;
+UPDATE skill_caps SET cap = 230 WHERE skillID = 34 AND level >50 AND level <=60 AND class = 9;

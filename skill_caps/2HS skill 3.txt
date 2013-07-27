@@ -1,0 +1,41 @@
+###2 HAND SLASH SKILL 3
+
+##2HS 5+5xlevel 
+
+#WAR1
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 3 AND level <=39 AND class = 1;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 3 AND level >39 AND level <=50 AND class = 1;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 3 AND level = 51 AND class = 1;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 3 AND level = 52 AND class = 1;
+UPDATE skill_caps SET cap = 215 WHERE skillID = 3 AND level = 53 AND class = 1;
+UPDATE skill_caps SET cap = 220 WHERE skillID = 3 AND level = 54 AND class = 1;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 3 AND level = 55 AND class = 1;
+UPDATE skill_caps SET cap = 230 WHERE skillID = 3 AND level = 56 AND class = 1;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 3 AND level = 57 AND class = 1;
+UPDATE skill_caps SET cap = 240 WHERE skillID = 3 AND level = 58 AND class = 1;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 3 AND level = 59 AND class = 1;
+UPDATE skill_caps SET cap = 250 WHERE skillID = 3 AND level = 60 AND class = 1;
+
+#PAL3
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 3 AND level <=39 AND class = 3;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 3 AND level >39 AND level <=50 AND class = 3;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 3 AND level >50 AND level <=60 AND class = 3;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 3 AND level <=39 AND class = 4;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 3 AND level >39 AND level <=50 AND class = 4;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 3 AND level = 51 AND class = 4;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 3 AND level = 52 AND class = 4;
+UPDATE skill_caps SET cap = 215 WHERE skillID = 3 AND level = 53 AND class = 4;
+UPDATE skill_caps SET cap = 220 WHERE skillID = 3 AND level = 54 AND class = 4;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 3 AND level = 55 AND class = 4;
+UPDATE skill_caps SET cap = 230 WHERE skillID = 3 AND level = 56 AND class = 4;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 3 AND level = 57 AND class = 4;
+UPDATE skill_caps SET cap = 240 WHERE skillID = 3 AND level = 58 AND class = 4;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 3 AND level = 59 AND class = 4;
+UPDATE skill_caps SET cap = 250 WHERE skillID = 3 AND level = 60 AND class = 4;
+
+#SHD5
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 3 AND level <=39 AND class = 5;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 3 AND level >39 AND level <=50 AND class = 5;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 3 AND level >50 AND level <=60 AND class = 5;

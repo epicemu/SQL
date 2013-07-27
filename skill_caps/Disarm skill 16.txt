@@ -1,0 +1,27 @@
+###DISARM skill 16
+
+##DISARM 5+5xlevel 
+
+#WAR1
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=39 AND class = 1;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 16 AND level >39 AND level <=60 AND class = 1;
+
+#PAL3
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=13 AND class = 3;
+UPDATE skill_caps SET cap = 70 WHERE skillID = 16 AND level >13 AND level <=60 AND class = 3;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=10 AND class = 4;
+UPDATE skill_caps SET cap = 55 WHERE skillID = 16 AND level >10 AND level <=60 AND class = 4;
+
+#SHD5
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=13 AND class = 5;
+UPDATE skill_caps SET cap = 70 WHERE skillID = 16 AND level >13 AND level <=60 AND class = 5;
+
+#MNK7  
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 16 AND level >39 AND level <=60 AND class = 7;
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 16 AND level <=39 AND class = 9;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 16 AND level >39 AND level <=60 AND class = 9;

@@ -1,0 +1,30 @@
+### SPECIALIZE Divination Skill 46
+
+#CLR2
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 2;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 2;
+
+#DRU6
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 6;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 6;
+
+#SHM10
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 10;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 10;
+
+
+#NEC11
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 11;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 11;
+
+#WIZ12 
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 12;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 12;
+
+#MAG13
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 13;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 13;
+
+#ENC14
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 46 AND level <=46 AND class = 14;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 46 AND level >46 AND level <=60 AND class = 14;

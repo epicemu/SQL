@@ -1,0 +1,18 @@
+### SNEAK skill 42
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 42 AND level <=14 AND class = 4;
+UPDATE skill_caps SET cap = 75 WHERE skillID = 42 AND level >14 AND level <=60 AND class = 4;
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 42 AND level <=21 AND class = 7;
+UPDATE skill_caps SET cap = 113 WHERE skillID = 42 AND level >21 AND level <=60 AND class = 7;
+
+#BRD8
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 42 AND level <=14 AND class = 8;
+UPDATE skill_caps SET cap = 75 WHERE skillID = 42 AND level >14 AND level <=60 AND class = 8;
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 42 AND level <=39 AND class = 9;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 42 AND level >39 AND level <=60 AND class = 9;
+

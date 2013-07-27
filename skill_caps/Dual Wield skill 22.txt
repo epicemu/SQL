@@ -1,0 +1,29 @@
+### DUAL WIELD
+
+#WAR1
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 22 AND level <=41 AND class = 1;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 22 AND level >41 AND level <=50 AND class = 1;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 22 AND level >50 AND level <=60 AND class = 1;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 22 AND level <=41 AND class = 4;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 22 AND level >41 AND level <=50 AND class = 4;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 22 AND level >50 AND level <=60 AND class = 4;
+
+#MNK7  
+UPDATE skill_caps SET cap = (7 + (7*level)) WHERE skillID = 22 AND level <=35 AND class = 7;
+UPDATE skill_caps SET cap = 252 WHERE skillID = 22 AND level >35 AND level <=60 AND class = 7;
+
+#BRD8
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 22 AND level <=41 AND class = 8;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 22 AND level >41 AND level <=60 AND class = 8;
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 22 AND level <=41 AND class = 9;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 22 AND level >41 AND level <=50 AND class = 9;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 22 AND level >50 AND level <=60 AND class = 9;
+
+#BST15
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 22 AND level <=41 AND class = 15;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 22 AND level >41 AND level <=50 AND class = 15;
+UPDATE skill_caps SET cap = 245 WHERE skillID = 22 AND level >50 AND level <=60 AND class = 15;

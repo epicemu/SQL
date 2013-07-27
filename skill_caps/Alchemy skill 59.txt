@@ -1,0 +1,6 @@
+###ALCHEMY skill 59
+
+#SHM10 
+UPDATE skill_caps SET cap = ((level-24)*5) WHERE skillID = 59 AND level <=49 AND class = 10;
+UPDATE skill_caps SET cap = 180 WHERE skillID = 59 AND level >49 AND level <=60 AND class = 10;
+

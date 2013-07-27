@@ -1,0 +1,17 @@
+###RESEARCH skill 58
+
+#NEC11 
+UPDATE skill_caps SET cap = ((level-15)*5) WHERE skillID = 58 AND level <=55 AND class = 11;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 58 AND level >55 AND level <=60 AND class = 11;
+
+#WIZ12 
+UPDATE skill_caps SET cap = ((level-15)*5) WHERE skillID = 58 AND level <=55 AND class = 12;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 58 AND level >55 AND level <=60 AND class = 12;
+
+#MAG13 
+UPDATE skill_caps SET cap = ((level-15)*5) WHERE skillID = 58 AND level <=55 AND class = 13;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 58 AND level >55 AND level <=60 AND class = 13;
+
+#ENC14
+UPDATE skill_caps SET cap = ((level-15)*5) WHERE skillID = 58 AND level <=55 AND class = 14;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 58 AND level >55 AND level <=60 AND class = 14;

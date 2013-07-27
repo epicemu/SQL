@@ -1,0 +1,14 @@
+###SAFE FALL skill 39
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 39 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 39 AND level >39 AND level <=60 AND class = 7;
+
+#BRD8
+UPDATE skill_caps SET cap = 0 WHERE skillID = 39 AND level <=23 AND class = 8;
+UPDATE skill_caps SET cap = 40 WHERE skillID = 39 AND level >23 AND level <=60 AND class = 8;
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 39 AND level <=19 AND class = 9;
+UPDATE skill_caps SET cap = 100 WHERE skillID = 39 AND level >19 AND level <=60 AND class = 9;
+

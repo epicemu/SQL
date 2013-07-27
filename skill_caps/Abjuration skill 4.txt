@@ -1,0 +1,48 @@
+### Abjuration Skill 4
+
+##Abjuration 5+5xlevel
+
+#CLR2
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 2;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 2;
+
+#PAL3
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 3;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 3;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 4;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 4;
+
+#SHD5
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 5;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 5;
+
+#DRU6
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 6;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 6;
+
+#SHM10
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 10;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 10;
+
+
+#NEC11
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 11;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 11;
+
+#WIZ12 
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 12;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 12;
+
+#MAG13
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 13;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 13;
+
+#ENC14
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 14;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 14;
+
+#BST15
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 4 AND level <=46 AND class = 15;
+UPDATE skill_caps SET cap = 235 WHERE skillID = 4 AND level >46 AND level <=60 AND class = 15;

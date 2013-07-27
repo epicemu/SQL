@@ -1,0 +1,7 @@
+###PICK POCKETS skill 48
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 48 AND level <=39 AND class = 9;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 48 AND level >39 AND level <=60 AND class = 9;
+
+

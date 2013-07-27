@@ -1,0 +1,17 @@
+###BACKSTAB skill 8
+
+##Backstab 5+5xlevel 
+
+#ROG9
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 8 AND level <=39 AND class = 9;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 8 AND level >39 AND level <=50 AND class = 9;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 8 AND level = 51 AND class = 9;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 8 AND level = 52 AND class = 9;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 8 AND level = 53 AND class = 9;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 8 AND level = 54 AND class = 9;
+UPDATE skill_caps SET cap = 215 WHERE skillID = 8 AND level = 55 AND class = 9;
+UPDATE skill_caps SET cap = 215 WHERE skillID = 8 AND level = 56 AND class = 9;
+UPDATE skill_caps SET cap = 220 WHERE skillID = 8 AND level = 57 AND class = 9;
+UPDATE skill_caps SET cap = 220 WHERE skillID = 8 AND level = 58 AND class = 9;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 8 AND level = 59 AND class = 9;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 8 AND level = 60 AND class = 9;

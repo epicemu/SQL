@@ -1,0 +1,21 @@
+### KICK skill 30
+
+#WAR1
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 30 AND level <=29 AND class = 1;
+UPDATE skill_caps SET cap = 150 WHERE skillID = 30 AND level >29 AND level <=50 AND class = 1;
+UPDATE skill_caps SET cap = 210 WHERE skillID = 30 AND level >50 AND level <=60 AND class = 1;
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 30 AND level <=29 AND class = 4;
+UPDATE skill_caps SET cap = 150 WHERE skillID = 30 AND level >29 AND level <=50 AND class = 4;
+UPDATE skill_caps SET cap = 205 WHERE skillID = 30 AND level >50 AND level <=60 AND class = 4;
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 30 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 30 AND level >39 AND level <=50 AND class = 7;
+UPDATE skill_caps SET cap = 250 WHERE skillID = 30 AND level >50 AND level <=60 AND class = 7;
+
+#BST15
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 30 AND level <=39 AND class = 15;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 30 AND level >39 AND level <=50 AND class = 15;
+UPDATE skill_caps SET cap = 230 WHERE skillID = 30 AND level >50 AND level <=60 AND class = 15;

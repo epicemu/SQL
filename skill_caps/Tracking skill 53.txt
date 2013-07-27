@@ -1,0 +1,13 @@
+### TRACKING skill 53
+
+#RNG4
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 53 AND level <=39 AND class = 4;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 53 AND level >39 AND level <=60 AND class = 4;
+
+#DRU6
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 53 AND level <=24 AND class = 6;
+UPDATE skill_caps SET cap = 125 WHERE skillID = 53 AND level >24 AND level <=60 AND class = 6;
+
+#BRD8
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 53 AND level <=19 AND class = 8;
+UPDATE skill_caps SET cap = 100 WHERE skillID = 53 AND level >19 AND level <=60 AND class = 8;

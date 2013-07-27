@@ -1,0 +1,6 @@
+###FLYING KICK skill 26
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 26 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 26 AND level >39 AND level <=50 AND class = 7;
+UPDATE skill_caps SET cap = 225 WHERE skillID = 26 AND level >50 AND level <=60 AND class = 7;

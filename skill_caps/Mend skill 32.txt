@@ -1,0 +1,6 @@
+###MEND skill 32
+
+#MNK7
+UPDATE skill_caps SET cap = (5 + (5*level)) WHERE skillID = 32 AND level <=39 AND class = 7;
+UPDATE skill_caps SET cap = 200 WHERE skillID = 32 AND level >39 AND level <=60 AND class = 7;
+
