@@ -1,0 +1,662 @@
+#Nurga Classic Revamp
+
+#fix goblin slinker
+UPDATE npc_types SET level = 34 WHERE name = 'a_goblin_slinker';
+#fix goblin slaves to look like old models and make them badass
+UPDATE npc_types SET race = 137, level = 34, hp = 1840, class = 13, npc_spells_id = 4 WHERE name = 'a_goblin_slave';
+#fix burynai slaves to lower lvl
+UPDATE npc_types SET level = 33, hp = 2016, mindmg = 13, maxdmg = 66 where id = 107133;
+UPDATE npc_types SET level = 35, hp = 2248, mindmg = 13, maxdmg = 66 where id = 107134;
+#remove sarnak slave
+UPDATE spawnentry set chance = 0 WHERE npcID = 107139 AND spawngroupID = 13424;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107139 AND spawngroupID = 13425;
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107139 AND spawngroupID = 13426;
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107139 AND spawngroupID = 13427;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107139 AND spawngroupID = 13429;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107139 AND spawngroupID = 13430;
+#remove tortured slave
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107116 AND spawngroupID = 13420;
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107118 AND spawngroupID = 13420;
+UPDATE spawnentry SET chance = 0 WHERE npcID = 107119 AND spawngroupID = 13420;
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107119 AND spawngroupID = 13421; #spawns 100%
+
+#11146
+UPDATE spawnentry SET npcID = 92050 WHERE npcID = 107000 AND spawngroupID = 11146;
+#11147
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107001 AND spawngroupID = 11147;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107088 AND spawngroupID = 11147;
+#11148
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107001 AND spawngroupID = 11148;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107002 AND spawngroupID = 11148;
+#11149
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107001 AND spawngroupID = 11149;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107003 AND spawngroupID = 11149;
+UPDATE spawnentry SET npcID = 92059 WHERE npcID = 107142 AND spawngroupID = 11149;
+#11150
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107004 AND spawngroupID = 11150;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107005 AND spawngroupID = 11150;
+#11151
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107005 AND spawngroupID = 11151;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107090 AND spawngroupID = 11151;
+#11152
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107005 AND spawngroupID = 11152;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107079 AND spawngroupID = 11152;
+#11153
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107004 AND spawngroupID = 11153;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107079 AND spawngroupID = 11153;
+#11154
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107006 AND spawngroupID = 11154;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107011 AND spawngroupID = 11154;
+#11155
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107007 AND spawngroupID = 11155;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107009 AND spawngroupID = 11155;
+#11156
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107008 AND spawngroupID = 11156;
+#11157
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107009 AND spawngroupID = 11157;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107140 AND spawngroupID = 11157;
+#11158
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107002 AND spawngroupID = 11158;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107010 AND spawngroupID = 11158;
+#11159
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107009 AND spawngroupID = 11159;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107080 AND spawngroupID = 11159;
+#11160
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107002 AND spawngroupID = 11160;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107013 AND spawngroupID = 11160;
+#11161
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107005 AND spawngroupID = 11161;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107009 AND spawngroupID = 11161;
+#11162
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107006 AND spawngroupID = 11162;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107010 AND spawngroupID = 11162;
+#11163
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107011 AND spawngroupID = 11163;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107089 AND spawngroupID = 11163;
+#11164
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107007 AND spawngroupID = 11164;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107011 AND spawngroupID = 11164;
+#11165
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107012 AND spawngroupID = 11165;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107159 AND spawngroupID = 11165;
+#11166
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107010 AND spawngroupID = 11166;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107081 AND spawngroupID = 11166;
+#11167
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107013 AND spawngroupID = 11167;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107088 AND spawngroupID = 11167;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107154 AND spawngroupID = 11167;
+#11168
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107014 AND spawngroupID = 11168;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107015 AND spawngroupID = 11168;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107129 AND spawngroupID = 11168;
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107140 AND spawngroupID = 11168;
+#11169
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107015 AND spawngroupID = 11169;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107019 AND spawngroupID = 11169;
+#11171
+INSERT INTO spawnentry VALUES ('11171','92142','10');
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107008 AND spawngroupID = 11171;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107017 AND spawngroupID = 11171;
+UPDATE spawnentry SET chance = 40 WHERE npcID = 92009 AND spawngroupID = 11171;
+#11170
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107016 AND spawngroupID = 11170;
+UPDATE spawnentry SET npcID = 81076 WHERE npcID = 107047 AND spawngroupID = 11170;
+#11172
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107014 AND spawngroupID = 11172;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107021 AND spawngroupID = 11172;
+#11173
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107018 AND spawngroupID = 11173;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107106 AND spawngroupID = 11173;
+#11174
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107008 AND spawngroupID = 11174;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107019 AND spawngroupID = 11174;
+#11175
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107017 AND spawngroupID = 11175;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107100 AND spawngroupID = 11175;
+#11176
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107020 AND spawngroupID = 11176;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107097 AND spawngroupID = 11176;
+#11177
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107018 AND spawngroupID = 11177;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107019 AND spawngroupID = 11177;
+#11178
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107021 AND spawngroupID = 11178;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107022 AND spawngroupID = 11178;
+#11179
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107023 AND spawngroupID = 11179;
+#11180
+UPDATE spawnentry SET npcID = 92129 WHERE npcID = 107024 AND spawngroupID = 11180;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107062 AND spawngroupID = 11180;
+#11181
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107025 AND spawngroupID = 11181;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107056 AND spawngroupID = 11181;
+#11182
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107026 AND spawngroupID = 11182;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107111 AND spawngroupID = 11182;
+#11183
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107027 AND spawngroupID = 11183;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107059 AND spawngroupID = 11183;
+#11184
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107026 AND spawngroupID = 11184;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107056 AND spawngroupID = 11184;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107129 AND spawngroupID = 11184;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107140 AND spawngroupID = 11184;
+#11185
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107028 AND spawngroupID = 11185;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107062 AND spawngroupID = 11185;
+#11186
+UPDATE spawnentry SET npcID = 81126 WHERE npcID = 107029 AND spawngroupID = 11186;
+#11187
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107030 AND spawngroupID = 11187;
+#11188
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107024 AND spawngroupID = 11188;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107031 AND spawngroupID = 11188;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107140 AND spawngroupID = 11188;
+#11189
+UPDATE spawnentry SET npcID = 92116 WHERE npcID = 107032 AND spawngroupID = 11189;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107061 AND spawngroupID = 11189;
+#11190
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107031 AND spawngroupID = 11190;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107107 AND spawngroupID = 11190;
+#11191
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107033 AND spawngroupID = 11191;
+#11192
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107034 AND spawngroupID = 11192;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107035 AND spawngroupID = 11192;
+#11193
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107035 AND spawngroupID = 11193;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107041 AND spawngroupID = 11193;
+#11194
+UPDATE spawnentry SET npcID = 81115 WHERE npcID = 107036 AND spawngroupID = 11194;
+UPDATE spawnentry SET npcID = 81094 WHERE npcID = 107039 AND spawngroupID = 11194;
+#11195
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107037 AND spawngroupID = 11195;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107045 AND spawngroupID = 11195;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107140 AND spawngroupID = 11195;
+#11196
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107038 AND spawngroupID = 11196;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107110 AND spawngroupID = 11196;
+#11197
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107039 AND spawngroupID = 11197;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107051 AND spawngroupID = 11197;
+#11198
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107040 AND spawngroupID = 11198;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107114 AND spawngroupID = 11198;
+#11199
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107041 AND spawngroupID = 11199;
+#11200
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107041 AND spawngroupID = 11200;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107042 AND spawngroupID = 11200;
+#11201
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107037 AND spawngroupID = 11201;
+#11202
+UPDATE spawnentry SET npcID = 81115 WHERE npcID = 107043 AND spawngroupID = 11202;
+UPDATE spawnentry SET npcID = 81094 WHERE npcID = 107155 AND spawngroupID = 11202;
+#11203
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107044 AND spawngroupID = 11203;
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107109 AND spawngroupID = 11203;
+#11204
+UPDATE spawnentry SET npcID = 81094 WHERE npcID = 107045 AND spawngroupID = 11204;
+#11205
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107042 AND spawngroupID = 11205;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107054 AND spawngroupID = 11205;
+#11206
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107039 AND spawngroupID = 11206;
+UPDATE spawnentry SET npcID = 81126 WHERE npcID = 107054 AND spawngroupID = 11206;
+#11207
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107046 AND spawngroupID = 11207;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107052 AND spawngroupID = 11207;
+#11208
+UPDATE spawnentry SET npcID = 81094 WHERE npcID = 107048 AND spawngroupID = 11208;
+#11209
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107019 AND spawngroupID = 11209;
+#11210
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107008 AND spawngroupID = 11210;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107099 AND spawngroupID = 11210;
+#11211
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107023 AND spawngroupID = 11211;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107049 AND spawngroupID = 11211;
+#11212
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107047 AND spawngroupID = 11212;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107077 AND spawngroupID = 11212;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107151 AND spawngroupID = 11212;
+#11213
+UPDATE spawnentry SET npcID = 92112 WHERE npcID = 107038 AND spawngroupID = 11213;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107041 AND spawngroupID = 11213;
+#11214
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107050 AND spawngroupID = 11214;
+#11215
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107040 AND spawngroupID = 11215;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107041 AND spawngroupID = 11215;
+#11216
+UPDATE spawnentry SET npcID = 92006 WHERE npcID = 107051 AND spawngroupID = 11216;
+#11217
+UPDATE spawnentry SET npcID = 92112 WHERE npcID = 107033 AND spawngroupID = 11217;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107052 AND spawngroupID = 11217;
+#11218
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107038 AND spawngroupID = 11218;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107045 AND spawngroupID = 11218;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107148 AND spawngroupID = 11218;
+#11219
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107038 AND spawngroupID = 11219;
+#11220
+UPDATE spawnentry SET npcID = 92116 WHERE npcID = 107042 AND spawngroupID = 11220;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107053 AND spawngroupID = 11220;
+#11221
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107045 AND spawngroupID = 11221;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107110 AND spawngroupID = 11221;
+#11222
+UPDATE spawnentry SET npcID = 92129 WHERE npcID = 107039 AND spawngroupID = 11222;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107109 AND spawngroupID = 11222;
+#11223
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107054 AND spawngroupID = 11223;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107109 AND spawngroupID = 11223;
+#11224
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107055 AND spawngroupID = 11224;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107112 AND spawngroupID = 11224;
+#11225
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107027 AND spawngroupID = 11225;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107113 AND spawngroupID = 11225;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107144 AND spawngroupID = 11225;
+#11226
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107056 AND spawngroupID = 11226;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107112 AND spawngroupID = 11226;
+#11227 
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107057 AND spawngroupID = 11227;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107111 AND spawngroupID = 11227;
+
+#11228 
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107058 AND spawngroupID = 11228;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107062 AND spawngroupID = 11228;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 189433 AND spawngroupID = 11228;
+DELETE FROM spawnentry WHERE npcID = 107141 AND spawngroupID = 11228;
+
+#11229 
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 189421 AND spawngroupID = 11229;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 189433 AND spawngroupID = 11229;
+
+#11230 
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107060 AND spawngroupID = 11230;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107061 AND spawngroupID = 11230;
+UPDATE spawnentry SET npcID = 92059 WHERE npcID = 107129 AND spawngroupID = 11230;
+
+#11231
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107025 AND spawngroupID = 11231;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107105 AND spawngroupID = 11231;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107150 AND spawngroupID = 11231;
+
+#11232
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107061 AND spawngroupID = 11232;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107102 AND spawngroupID = 11232;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107140 AND spawngroupID = 11232;
+
+#11233
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107027 AND spawngroupID = 11233;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107058 AND spawngroupID = 11233;
+#11234
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107017 AND spawngroupID = 11234;
+#11235
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107063 AND spawngroupID = 11235;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107103 AND spawngroupID = 11235;
+#11236
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107064 AND spawngroupID = 11236;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107072 AND spawngroupID = 11236;
+UPDATE spawnentry SET npcID = 92050 WHERE npcID = 107091 AND spawngroupID = 11236;
+#11237
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107065 AND spawngroupID = 11237;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107094 AND spawngroupID = 11237;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107146 AND spawngroupID = 11237;
+#11238
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107066 AND spawngroupID = 11238;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107091 AND spawngroupID = 11238;
+#11239
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107067 AND spawngroupID = 11239;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107095 AND spawngroupID = 11239;
+#11240
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107068 AND spawngroupID = 11240;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107071 AND spawngroupID = 11240;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107072 AND spawngroupID = 11240;
+#11241
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107069 AND spawngroupID = 11241;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107115 AND spawngroupID = 11241;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107140 AND spawngroupID = 11241;
+#11242
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107070 AND spawngroupID = 11242;
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107086 AND spawngroupID = 11242;
+UPDATE spawnentry SET npcID = 92051 WHERE npcID = 107140 AND spawngroupID = 11242;
+#11243
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107071 AND spawngroupID = 11243;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107086 AND spawngroupID = 11243;
+#11244
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107072 AND spawngroupID = 11244;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107073 AND spawngroupID = 11244;
+#11245
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107070 AND spawngroupID = 11245;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107073 AND spawngroupID = 11245;
+#11246
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107073 AND spawngroupID = 11246;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107095 AND spawngroupID = 11246;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107129 AND spawngroupID = 11246;
+#11247
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107065 AND spawngroupID = 11247;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107074 AND spawngroupID = 11247;
+#11248
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107003 AND spawngroupID = 11248;
+#11249
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107075 AND spawngroupID = 11249;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107086 AND spawngroupID = 11249;
+#11250
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107071 AND spawngroupID = 11250;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107086 AND spawngroupID = 11250;
+UPDATE spawnentry SET npcID = 92059 WHERE npcID = 107115 AND spawngroupID = 11250;
+#11251
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107006 AND spawngroupID = 11251;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107076 AND spawngroupID = 11251;
+UPDATE spawnentry SET npcID = 92059 WHERE npcID = 107089 AND spawngroupID = 11251;
+#11252
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107074 AND spawngroupID = 11252;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107092 AND spawngroupID = 11252;
+UPDATE spawnentry SET npcID = 92059 WHERE npcID = 107094 AND spawngroupID = 11252;
+#11253
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107078 AND spawngroupID = 11253;
+#11254
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107076 AND spawngroupID = 11254;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107081 AND spawngroupID = 11254;
+#11255
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107003 AND spawngroupID = 11255;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107076 AND spawngroupID = 11255;
+#11256
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107002 AND spawngroupID = 11256;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107079 AND spawngroupID = 11256;
+#11257
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107009 AND spawngroupID = 11257;
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107079 AND spawngroupID = 11257;
+#11258
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107012 AND spawngroupID = 11258;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107080 AND spawngroupID = 11258;
+#11259
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107004 AND spawngroupID = 11259;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107082 AND spawngroupID = 11259;
+#11260
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107001 AND spawngroupID = 11260;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107081 AND spawngroupID = 11260;
+#11261
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107079 AND spawngroupID = 11261;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107080 AND spawngroupID = 11261;
+#11262
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107081 AND spawngroupID = 11262;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107082 AND spawngroupID = 11262;
+#11263
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107001 AND spawngroupID = 11263;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107002 AND spawngroupID = 11263;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107010 AND spawngroupID = 11263;
+#11264
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107007 AND spawngroupID = 11264;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107013 AND spawngroupID = 11264;
+#11265
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107004 AND spawngroupID = 11265;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107080 AND spawngroupID = 11265;
+#11266
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107005 AND spawngroupID = 11266;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107006 AND spawngroupID = 11266;
+#11267
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107079 AND spawngroupID = 11267;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107088 AND spawngroupID = 11267;
+#11268
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107065 AND spawngroupID = 11268;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107071 AND spawngroupID = 11268;
+#11269
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107083 AND spawngroupID = 11269;
+#11270
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107084 AND spawngroupID = 11270;
+#11271
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107085 AND spawngroupID = 11271;
+#11272
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107065 AND spawngroupID = 11272;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107145 AND spawngroupID = 11272;
+#11273
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107067 AND spawngroupID = 11273;
+#11274
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107067 AND spawngroupID = 11274;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107091 AND spawngroupID = 11274;
+#11275
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107007 AND spawngroupID = 11275;
+#11276
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107017 AND spawngroupID = 11276;
+#11277
+UPDATE spawnentry SET npcID = 92050 WHERE npcID = 107073 AND spawngroupID = 11277;
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107086 AND spawngroupID = 11277;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107136 AND spawngroupID = 11277;
+#11278
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107072 AND spawngroupID = 11278;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107087 AND spawngroupID = 11278;
+#11279
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107004 AND spawngroupID = 11279;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107011 AND spawngroupID = 11279;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107153 AND spawngroupID = 11279;
+#11280
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107004 AND spawngroupID = 11280;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107011 AND spawngroupID = 11280;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107079 AND spawngroupID = 11280;
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107152 AND spawngroupID = 11280;
+#11281
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107004 AND spawngroupID = 11281;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107012 AND spawngroupID = 11281;
+#11282
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107004 AND spawngroupID = 11282;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107007 AND spawngroupID = 11282;
+#11283
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107003 AND spawngroupID = 11283;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107078 AND spawngroupID = 11283;
+#11284
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107080 AND spawngroupID = 11284;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107088 AND spawngroupID = 11284;
+#11285
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107005 AND spawngroupID = 11285;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107007 AND spawngroupID = 11285;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107011 AND spawngroupID = 11285;
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107081 AND spawngroupID = 11285;
+#11286
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107080 AND spawngroupID = 11286;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107082 AND spawngroupID = 11286;
+#11287
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107004 AND spawngroupID = 11287;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107009 AND spawngroupID = 11287;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107129 AND spawngroupID = 11287;
+#11288
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107078 AND spawngroupID = 11288;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107081 AND spawngroupID = 11288;
+#11289
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107003 AND spawngroupID = 11289;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107006 AND spawngroupID = 11289;
+#11290
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107001 AND spawngroupID = 11290;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107078 AND spawngroupID = 11290;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107129 AND spawngroupID = 11290;
+#11291
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107004 AND spawngroupID = 11291;
+UPDATE spawnentry SET npcID = 92093 WHERE npcID = 107088 AND spawngroupID = 11291;
+#11292
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107011 AND spawngroupID = 11292;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107082 AND spawngroupID = 11292;
+#11293
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107009 AND spawngroupID = 11293;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107010 AND spawngroupID = 11293;
+#11294
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107005 AND spawngroupID = 11294;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107010 AND spawngroupID = 11294;
+#11295
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107006 AND spawngroupID = 11295;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107081 AND spawngroupID = 11295;
+#11296
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107089 AND spawngroupID = 11296;
+#11297
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107010 AND spawngroupID = 11297;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107090 AND spawngroupID = 11297;
+#11298
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107007 AND spawngroupID = 11298;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107079 AND spawngroupID = 11298;
+#11299
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107011 AND spawngroupID = 11299;
+UPDATE spawnentry SET npcID = 92031 WHERE npcID = 107012 AND spawngroupID = 11299;
+#11300
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107082 AND spawngroupID = 11300;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107089 AND spawngroupID = 11300;
+#11301
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107013 AND spawngroupID = 11301;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107079 AND spawngroupID = 11301;
+#11302
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107069 AND spawngroupID = 11302;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107092 AND spawngroupID = 11302;
+#11303
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107093 AND spawngroupID = 11303;
+#11304
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107074 AND spawngroupID = 11304;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107094 AND spawngroupID = 11304;
+#11305
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107085 AND spawngroupID = 11305;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107093 AND spawngroupID = 11305;
+#11306
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107071 AND spawngroupID = 11306;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107074 AND spawngroupID = 11306;
+#11307
+UPDATE spawnentry SET npcID = 92079 WHERE npcID = 107073 AND spawngroupID = 11307;
+UPDATE spawnentry SET npcID = 92101 WHERE npcID = 107094 AND spawngroupID = 11307;
+#11308
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107065 AND spawngroupID = 11308;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107092 AND spawngroupID = 11308;
+#11309
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107070 AND spawngroupID = 11309;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107093 AND spawngroupID = 11309;
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107140 AND spawngroupID = 11309;
+#11310
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107070 AND spawngroupID = 11310;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107085 AND spawngroupID = 11310;
+#11311
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107067 AND spawngroupID = 11311;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107087 AND spawngroupID = 11311;
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107140 AND spawngroupID = 11311;
+#11312
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107072 AND spawngroupID = 11312;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107075 AND spawngroupID = 11312;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107129 AND spawngroupID = 11312;
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107140 AND spawngroupID = 11312;
+#11313
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107065 AND spawngroupID = 11313;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107070 AND spawngroupID = 11313;
+#11314
+UPDATE spawnentry SET npcID = 107133 WHERE npcID = 107071 AND spawngroupID = 11314;
+UPDATE spawnentry SET npcID = 107134 WHERE npcID = 107092 AND spawngroupID = 11314;
+#11315
+UPDATE spawnentry SET npcID = 92024 WHERE npcID = 107072 AND spawngroupID = 11315;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107096 AND spawngroupID = 11315;
+UPDATE spawnentry SET npcID = 92069 WHERE npcID = 107140 AND spawngroupID = 11315;
+UPDATE spawnentry SET npcID = 81110 WHERE npcID = 107143 AND spawngroupID = 11315;
+#11316
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107073 AND spawngroupID = 11316;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107085 AND spawngroupID = 11316;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107129 AND spawngroupID = 11316;
+#11317
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107071 AND spawngroupID = 11317;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107094 AND spawngroupID = 11317;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107129 AND spawngroupID = 11317;
+#11318
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107086 AND spawngroupID = 11318;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107095 AND spawngroupID = 11318;
+#11319
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107085 AND spawngroupID = 11319;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107096 AND spawngroupID = 11319;
+#11320
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107091 AND spawngroupID = 11320;
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107094 AND spawngroupID = 11320;
+#11321
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107069 AND spawngroupID = 11321;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107086 AND spawngroupID = 11321;
+#11322
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107074 AND spawngroupID = 11322;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107091 AND spawngroupID = 11322;
+UPDATE spawnentry SET npcID = 92009 WHERE npcID = 107140 AND spawngroupID = 11322;
+#11323
+UPDATE spawnentry SET npcID = 81111 WHERE npcID = 107092 AND spawngroupID = 11323;
+UPDATE spawnentry SET npcID = 92020 WHERE npcID = 107096 AND spawngroupID = 11323;
+#11324
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107075 AND spawngroupID = 11324;
+#11325
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107065 AND spawngroupID = 11325;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107067 AND spawngroupID = 11325;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107094 AND spawngroupID = 11325;
+#11326
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107068 AND spawngroupID = 11326;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107092 AND spawngroupID = 11326;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107096 AND spawngroupID = 11326;
+#11327
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107070 AND spawngroupID = 11327;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107091 AND spawngroupID = 11327;
+#11328
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107069 AND spawngroupID = 11328;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107071 AND spawngroupID = 11328;
+#11329
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107085 AND spawngroupID = 11329;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107087 AND spawngroupID = 11329;
+UPDATE spawnentry SET npcID = 189446 WHERE npcID = 107095 AND spawngroupID = 11329;
+#11330
+UPDATE spawnentry SET npcID = 92003 WHERE npcID = 107086 AND spawngroupID = 11330;
+UPDATE spawnentry SET npcID = 92042 WHERE npcID = 107087 AND spawngroupID = 11330;
+#11331
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107070 AND spawngroupID = 11331;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107072 AND spawngroupID = 11331;
+#11332
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107016 AND spawngroupID = 11332;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107022 AND spawngroupID = 11332;
+#11333
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107019 AND spawngroupID = 11333;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107097 AND spawngroupID = 11333;
+#11334
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107022 AND spawngroupID = 11334;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107050 AND spawngroupID = 11334;
+#11335
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107018 AND spawngroupID = 11335;
+#11336
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107023 AND spawngroupID = 11336;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107098 AND spawngroupID = 11336;
+#11337
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107008 AND spawngroupID = 11337;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107097 AND spawngroupID = 11337;
+#11338
+UPDATE spawnentry SET npcID = 92106 WHERE npcID = 107022 AND spawngroupID = 11338;
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107099 AND spawngroupID = 11338;
+#11339
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107049 AND spawngroupID = 11339;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107100 AND spawngroupID = 11339;
+#11340
+UPDATE spawnentry SET npcID = 92193 WHERE npcID = 107019 AND spawngroupID = 11340;
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107049 AND spawngroupID = 11340;
+#11341
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107037 AND spawngroupID = 11341;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107110 AND spawngroupID = 11341;
+
+#11342
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107133 AND spawngroupID = 11342;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107043 AND spawngroupID = 11342;
+UPDATE spawnentry SET chance = 0 WHERE npcID = 107139 AND spawngroupID = 11342;
+UPDATE spawnentry SET chance = 0 WHERE npcID = 107038 AND spawngroupID = 11342;
+
+#11343
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107052 AND spawngroupID = 11343;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107110 AND spawngroupID = 11343;
+#11345
+UPDATE spawnentry SET npcID = 81126 WHERE npcID = 107104 AND spawngroupID = 11345;
+#11346
+UPDATE spawnentry SET npcID = 81126 WHERE npcID = 107108 AND spawngroupID = 11346;
+
+#13422
+UPDATE spawnentry SET npcID = 81126 WHERE npcID = 107129 AND spawngroupID = 13422;
+#13423
+UPDATE spawnentry SET npcID = 189421 WHERE npcID = 107131 AND spawngroupID = 13423;
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107138 AND spawngroupID = 13423;
+#13431
+UPDATE spawnentry SET npcID = 189433 WHERE npcID = 107140 AND spawngroupID = 13431;
+
+#13432
+UPDATE spawnentry SET npcID = 81129 WHERE npcID = 107140 AND spawngroupID = 13432;

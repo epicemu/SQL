@@ -1,0 +1,83 @@
+#Feerrott Cazic thule entrance mobs fix
+#protector
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47081;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47133;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47115;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47202;
+#Sentinels
+UPDATE spawnentry SET npcID = 50062 WHERE npcID = 47116;
+UPDATE spawnentry SET npcID = 50035 WHERE npcID = 47114;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47168;
+#Heralds
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47137;
+UPDATE spawnentry SET npcID = 50021 WHERE npcID = 47166;
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47135;
+#Disciple
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47089;
+#Judicator
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47169;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47167;
+#Templar
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47198;
+#Page
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47134;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47086;
+#Zealot
+UPDATE spawnentry SET npcID = 50022 WHERE npcID = 47102;
+UPDATE spawnentry SET npcID = 50050 WHERE npcID = 47099;
+UPDATE spawnentry SET npcID = 50021 WHERE npcID = 47085;
+#Diviner
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47203;
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47250;
+#Fanatic
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47122;
+UPDATE spawnentry SET npcID = 50050 WHERE npcID = 47101;
+UPDATE spawnentry SET npcID = 50021 WHERE npcID = 47123;
+#Defender
+UPDATE spawnentry SET npcID = 50022 WHERE npcID = 47084;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47082;
+UPDATE spawnentry SET npcID = 50050 WHERE npcID = 47090;
+#Warder
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47164;
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47165;
+#Probationer
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47083;
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47087;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47082;
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47087;
+UPDATE spawnentry SET npcID = 50035 WHERE npcID = 47115;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47133;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47202;
+#Radiant remove
+UPDATE spawnentry SET npcID = 50035 WHERE npcID = 47092;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47182;
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47200;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47083;
+#Justicar and Cenobite Extras
+UPDATE spawnentry SET npcID = 50022 WHERE npcID = 47124;
+UPDATE spawnentry SET npcID = 50035 WHERE npcID = 47136;
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47195;
+UPDATE spawnentry SET npcID = 50021 WHERE npcID = 47101;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47123;
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 76039;
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47103;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47167;
+#Entrance to CT Gorillas
+UPDATE spawnentry SET npcID = 50213 WHERE npcID = 47171;
+UPDATE spawnentry SET npcID = 50212 WHERE npcID = 47185;
+UPDATE spawnentry SET npcID = 50029 WHERE npcID = 47199;
+UPDATE spawnentry SET npcID = 50080 WHERE npcID = 47184;
+UPDATE spawnentry SET npcID = 50022 WHERE npcID = 47170;
+
+#SET FACTIONS TO CORRECT FACTION
+UPDATE npc_types SET npc_faction_id = 693 WHERE npc_faction_id = 693 AND level <= 44;
+UPDATE npc_types SET npc_faction_id = 693 WHERE npc_faction_id = 694 AND level <= 44;
+UPDATE npc_types SET npc_faction_id = 64 WHERE npc_faction_id = 693 AND level <= 44;
+UPDATE npc_types SET npc_faction_id = 64 WHERE npc_faction_id = 694 AND level <= 44;
+UPDATE npc_types SET npc_faction_id = 693 WHERE npc_faction_id = 64 AND level <= 13;
+UPDATE npc_types SET npc_faction_id = 694 WHERE npc_faction_id = 64 AND level <= 38 AND level >= 18;
+
+
+
+
+

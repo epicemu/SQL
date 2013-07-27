@@ -1,0 +1,666 @@
+# CT revamp v1.2 Kegz @ EpicEmu.com
+# notes: script works to a degree, some variables need to be changed manually after running such as gorilla
+# spawn points near temple, and a few loot tables still require changes.
+############
+#CREATE NPCS
+############
+
+INSERT INTO `npc_types` VALUES (47210, 'a_lizard_disciple', '', 18, 51, 2, 1, 504, 0, 2, 0, 0, 6, 0, 0, 1897, 0, 0, 1, 694, 0, 0, 1, 36, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.4, 7, 7, 7, 7, 7, 11, 0, 1, 0, 136, 0, 0, 0, 0, 98, 98, 98, 98, 98, 98, 98, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47211, 'a_lizard_warder', '', 18, 51, 1, 1, 504, 0, 2, 0, 0, 6, 0, 0, 1903, 0, 0, 0, 694, 0, 0, 1, 36, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.4, 7, 7, 7, 7, 7, 11, 0, 1, 0, 136, 0, 0, 0, 0, 98, 98, 98, 98, 98, 98, 98, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47212, 'a_lizard_warder', '', 20, 51, 1, 1, 600, 0, 2, 0, 0, 6, 0, 0, 1903, 0, 0, 0, 694, 0, 0, 1, 40, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.4, 8, 8, 8, 8, 8, 12, 0, 1, 0, 149, 0, 0, 0, 0, 99, 99, 99, 99, 99, 99, 99, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47213, 'a_lizard_probationer', '', 21, 51, 2, 1, 651, 0, 2, 0, 0, 6, 0, 0, 10170, 0, 0, 1, 694, 0, 0, 1, 42, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 8, 8, 8, 8, 8, 13, 0, 1, 0, 155, 0, 0, 0, 0, 99, 99, 99, 99, 99, 99, 99, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47214, 'a_lizard_defender', '', 21, 51, 1, 1, 651, 0, 2, 0, 0, 6, 0, 0, 1896, 0, 0, 0, 694, 0, 0, 1, 42, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 8, 8, 8, 8, 8, 13, 0, 1, 0, 155, 0, 0, 0, 0, 99, 99, 99, 99, 99, 99, 99, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47215, 'a_lizard_defender', '', 22, 51, 1, 1, 704, 0, 2, 0, 0, 6, 0, 0, 1896, 0, 0, 0, 694, 0, 0, 1, 44, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 9, 9, 9, 9, 9, 14, 0, 1, 0, 162, 0, 0, 0, 0, 99, 99, 99, 99, 99, 99, 99, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47216, 'a_lizard_probationer', '', 22, 51, 2, 1, 704, 0, 2, 0, 0, 6, 0, 0, 10170, 0, 0, 1, 694, 0, 0, 1, 44, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 9, 9, 9, 9, 9, 14, 0, 1, 0, 162, 0, 0, 0, 0, 99, 99, 99, 99, 99, 99, 99, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47217, 'a_lizard_defender', '', 23, 51, 1, 1, 759, 0, 2, 0, 0, 6, 1, 0, 1896, 0, 0, 0, 694, 0, 0, 1, 46, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 9, 9, 9, 9, 9, 14, 0, 1, 0, 168, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47218, 'a_lizard_page', '', 23, 51, 2, 1, 759, 0, 2, 0, 0, 6, 0, 0, 6483, 0, 0, 1, 694, 0, 0, 1, 46, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 9, 9, 9, 9, 9, 14, 0, 1, 0, 168, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47219, 'a_lizard_page', '', 24, 51, 2, 1, 816, 0, 2, 0, 0, 6, 0, 0, 6483, 0, 0, 1, 694, 0, 0, 1, 48, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 15, 0, 1, 0, 175, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47220, 'a_lizard_sentinel', '', 24, 51, 1, 1, 816, 0, 2, 0, 0, 6, 1, 0, 1902, 0, 0, 0, 694, 0, 0, 1, 48, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 15, 0, 1, 0, 175, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47221, 'a_lizard_sentinel', '', 25, 51, 1, 1, 875, 0, 2, 0, 0, 6, 1, 0, 1902, 0, 0, 0, 694, 0, 0, 1, 50, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 16, 0, 1, 0, 181, 0, 0, 0, 0, 101, 101, 101, 101, 101, 101, 101, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47222, 'a_lizard_herald', '', 26, 51, 2, 1, 936, 0, 2, 0, 0, 6, 0, 0, 1899, 0, 0, 1, 694, 0, 0, 1, 52, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 10, 10, 10, 10, 10, 16, 0, 1, 0, 188, 0, 0, 0, 0, 102, 102, 102, 102, 102, 102, 102, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47223, 'a_lizard_sentinel', '', 26, 51, 1, 1, 936, 0, 2, 0, 0, 6, 1, 0, 1902, 0, 0, 0, 694, 0, 0, 1, 52, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 10, 10, 10, 10, 10, 16, 0, 1, 0, 188, 0, 0, 0, 0, 102, 102, 102, 102, 102, 102, 102, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47224, 'a_lizard_protector', '', 27, 51, 1, 1, 999, 0, 2, 0, 0, 6, 1, 0, 11444, 0, 0, 0, 694, 0, 0, 1, 54, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 17, 0, 1, 0, 194, 0, 0, 0, 0, 103, 103, 103, 103, 103, 103, 103, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47225, 'a_lizard_herald', '', 27, 51, 2, 1, 999, 0, 2, 0, 0, 6, 0, 0, 1899, 0, 0, 1, 694, 0, 0, 1, 54, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 17, 0, 1, 0, 194, 0, 0, 0, 0, 103, 103, 103, 103, 103, 103, 103, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47226, 'a_lizard_protector', '', 28, 51, 1, 1, 1064, 0, 2, 0, 0, 6, 1, 0, 11444, 0, 0, 0, 694, 0, 0, 11, 56, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 17, 0, 1, 0, 201, 0, 0, 0, 0, 104, 104, 104, 104, 104, 104, 104, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47227, 'a_lizard_herald', '', 28, 51, 2, 1, 1064, 0, 2, 0, 0, 6, 1, 1, 1899, 0, 0, 1, 694, 0, 0, 11, 56, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 17, 0, 1, 0, 201, 0, 0, 0, 0, 104, 104, 104, 104, 104, 104, 104, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47228, 'a_lizard_protector', '', 29, 51, 1, 1, 1131, 0, 2, 0, 0, 6, 1, 0, 11444, 0, 0, 0, 694, 0, 0, 11, 58, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 18, 0, 1, 0, 207, 0, 0, 0, 0, 105, 105, 105, 105, 105, 105, 105, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47229, 'a_lizard_justicar', '', 29, 51, 2, 1, 1131, 0, 2, 0, 0, 6, 1, 1, 1901, 0, 0, 1, 694, 0, 0, 11, 58, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 18, 0, 1, 0, 207, 0, 0, 0, 0, 105, 105, 105, 105, 105, 105, 105, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47230, 'a_lizard_fanatic', '', 30, 51, 1, 1, 1200, 0, 2, 0, 0, 6, 1, 0, 89963, 0, 0, 0, 694, 0, 0, 12, 60, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 12, 12, 12, 12, 12, 19, 0, 1, 0, 214, 0, 0, -7, 0, 106, 106, 106, 106, 106, 106, 106, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47231, 'a_lizard_justicar', '', 30, 51, 2, 1, 1200, 0, 2, 0, 0, 6, 1, 1, 1901, 0, 0, 1, 694, 0, 0, 12, 60, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 12, 12, 12, 12, 12, 19, 0, 1, 0, 214, 0, 0, -7, 0, 106, 106, 106, 106, 106, 106, 106, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47232, 'a_lizard_spiritualist', '', 30, 51, 1, 1, 1200, 0, 2, 0, 0, 7, 1, 0, 11160, 0, 0, 0, 694, 0, 0, 12, 60, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 12, 12, 12, 12, 12, 19, 0, 1, 0, 214, 0, 0, -7, 0, 106, 106, 106, 106, 106, 106, 106, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47233, 'a_lizard_fanatic', '', 31, 51, 1, 1, 1271, 0, 2, 0, 0, 6, 1, 0, 89963, 0, 0, 0, 694, 0, 0, 13, 62, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 12, 12, 12, 12, 12, 19, 0, 1, 0, 220, 0, 0, -7, 0, 108, 108, 108, 108, 108, 108, 108, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47234, 'a_lizard_justicar', '', 31, 51, 2, 1, 1271, 0, 2, 0, 0, 6, 1, 1, 1901, 0, 0, 1, 694, 0, 0, 13, 62, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 12, 12, 12, 12, 12, 19, 0, 1, 0, 220, 0, 0, -7, 0, 108, 108, 108, 108, 108, 108, 108, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47235, 'a_lizard_crusader', '', 31, 51, 5, 1, 1271, 0, 2, 0, 0, 7, 1, 1, 12327, 0, 0, 9, 694, 0, 0, 13, 62, -1, '', 55, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 12, 12, 12, 12, 12, 19, 1, 1, 0, 220, 0, 0, -7, 0, 108, 108, 108, 108, 108, 108, 108, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47236, 'a_lizard_zealot', '', 32, 51, 1, 1, 1344, 0, 2, 0, 0, 6, 1, 0, 1904, 0, 0, 0, 694, 0, 0, 13, 64, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 13, 13, 13, 13, 13, 20, 0, 1, 0, 227, 0, 0, -7, 0, 109, 109, 109, 109, 109, 109, 109, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47237, 'a_lizard_fanatic', '', 32, 51, 1, 1, 1344, 0, 2, 0, 0, 6, 1, 0, 89963, 0, 0, 0, 694, 0, 0, 13, 64, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 13, 13, 13, 13, 13, 20, 0, 1, 0, 227, 0, 0, -7, 0, 109, 109, 109, 109, 109, 109, 109, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47238, 'a_lizard_judicator', '', 32, 51, 2, 1, 1344, 0, 2, 0, 0, 6, 1, 1, 1900, 0, 0, 1, 694, 0, 0, 13, 64, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 13, 13, 13, 13, 13, 20, 0, 1, 0, 227, 0, 0, -7, 0, 109, 109, 109, 109, 109, 109, 109, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47239, 'a_lizard_zealot', '', 33, 51, 1, 1, 1419, 0, 2, 0, 0, 6, 1, 0, 1904, 0, 0, 0, 694, 0, 0, 13, 66, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 13, 13, 13, 13, 13, 20, 0, 1, 0, 233, 0, 0, -7, 0, 111, 111, 111, 111, 111, 111, 111, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47240, 'a_lizard_zealot', '', 34, 51, 1, 1, 1496, 0, 2, 0, 0, 6, 1, 0, 1904, 0, 0, 0, 694, 0, 0, 14, 68, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 14, 14, 14, 14, 14, 21, 0, 1, 0, 240, 0, 0, -8, 0, 113, 113, 113, 113, 113, 113, 113, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47241, 'a_lizard_judicator', '', 34, 51, 2, 1, 1496, 0, 2, 0, 0, 6, 1, 1, 1900, 0, 0, 1, 694, 0, 0, 14, 68, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 14, 14, 14, 14, 14, 21, 0, 1, 0, 240, 0, 0, -8, 0, 113, 113, 113, 113, 113, 113, 113, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47245, 'a_stone_golem', '', 30, 17, 1, 1, 1350, 0, 2, 0, 0, 6, 1, 0, 886, 0, 0, 0, 694, 0, 0, 12, 60, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 12, 12, 12, 12, 12, 19, 0, 1, 0, 214, 0, 0, -7, 0, 106, 106, 106, 106, 106, 106, 106, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47246, 'Avatar_of_Fear', '', 38, 95, 1, 7, 2000, 0, 2, 0, 0, 6, 1, 0, 555, 0, 0, 0, 0, 0, 0, 32, 120, -1, 'SER', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.25, 16, 16, 16, 16, 16, 25, 0, 1, 0, 279, 0, 0, -9, 0, 132, 132, 132, 132, 132, 132, 132, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47247, 'a_Silvered_Guard', '', 26, 51, 1, 1, 936, 0, 2, 0, 0, 6, 1, 0, 2266, 0, 0, 0, 693, 0, 0, 1, 52, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 10, 10, 10, 10, 10, 16, 0, 1, 0, 188, 0, 0, 0, 0, 102, 102, 102, 102, 102, 102, 102, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47248, 'Cazic_Cenobite', '', 36, 51, 2, 1, 1656, 0, 2, 0, 0, 6, 1, 1, 888, 0, 0, 1, 694, 0, 0, 14, 72, -1, '', 55, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.6, 14, 14, 14, 14, 14, 22, 0, 1, 0, 253, 0, 1, -8, 0, 118, 118, 118, 118, 118, 118, 118, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47249, 'Tae_Ew_Archon', '', 34, 51, 12, 1, 1496, 0, 2, 0, 0, 6, 1, 1, 570, 0, 0, 2, 694, 0, 0, 14, 68, -1, '', 55, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 14, 14, 14, 14, 14, 21, 1, 1, 0, 240, 0, 0, -8, 0, 113, 113, 113, 113, 113, 113, 113, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47250, 'Tae_Ew_Diviner', '', 28, 51, 14, 1, 1064, 0, 2, 0, 0, 6, 0, 1, 556, 0, 0, 5, 694, 0, 0, 11, 56, -1, '', 55, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.5, 11, 11, 11, 11, 11, 17, 1, 1, 0, 201, 0, 0, 0, 0, 104, 104, 104, 104, 104, 104, 104, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47251, 'a_hulking_gorilla', '', 28, 41, 1, 21, 999, 0, 2, 0, 0, 7, 1, 0, 886, 0, 0, 0, 38, 0, 0, 1, 50, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 16, 0, 1, 0, 181, 0, 0, 0, 0, 101, 101, 101, 101, 101, 101, 101, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47252, 'a_hulking_gorilla', '', 28, 41, 1, 21, 999, 0, 2, 0, 0, 7, 1, 0, 0, 0, 0, 0, 38, 0, 0, 1, 50, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 16, 0, 1, 0, 181, 0, 0, 0, 0, 101, 101, 101, 101, 101, 101, 101, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47253, 'an_alligator', '', 28, 91, 1, 21, 1000, 0, 2, 0, 0, 7, 1, 0, 2209, 0, 0, 0, 79, 0, 0, 1, 55, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 15, 0, 1, 0, 175, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47254, 'an_alligator', '', 30, 91, 1, 21, 1200, 0, 2, 0, 0, 7, 1, 0, 2209, 0, 0, 0, 79, 0, 0, 1, 60, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 9, 9, 9, 9, 9, 14, 0, 1, 0, 168, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47255, 'an_alligator', '', 33, 91, 1, 21, 1400, 0, 2, 0, 0, 7, 1, 0, 2209, 0, 0, 0, 79, 0, 0, 1, 48, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.45, 10, 10, 10, 10, 10, 15, 0, 1, 0, 175, 0, 0, 0, 0, 100, 100, 100, 100, 100, 100, 100, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47256, 'a_steel_golem', '', 35, 17, 1, 5, 1575, 0, 2, 2, 0, 7, 1, 0, 8000, 0, 0, 0, 79, 0, 0, 14, 70, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 14, 14, 14, 14, 14, 22, 0, 1, 0, 246, 0, 0, -8, 0, 116, 116, 116, 116, 116, 116, 116, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+INSERT INTO `npc_types` VALUES (47257, 'a_lizard_champion', '', 35, 51, 1, 1, 1575, 0, 2, 2, 0, 6, 1, 0, 0, 0, 0, 0, 79, 0, 0, 14, 70, -1, '', 55, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 28, 1.55, 14, 14, 14, 14, 14, 22, 0, 1, 0, 246, 0, 0, -8, 0, 116, 116, 116, 116, 116, 116, 116, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 100, 0, 0, 0);
+
+
+##############
+MAKE MOBS AGRO
+##############
+#UPDATE faction_list SET base = -10000 WHERE id = 366 AND name = 'KOS';
+UPDATE npc_types SET npc_faction_id = 79 WHERE id >= 47210 AND id <= 47257;
+UPDATE npc_types SET npc_faction_id = 79 WHERE name LIKE '%burynai%';
+
+##############
+#UPDATE SPAWNS
+##############
+
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 3374 AND npcID = 48016;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 3374 AND npcID = 48077;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 3374 AND npcID = 48156;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 5153 AND npcID = 48009;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 5153 AND npcID = 48083;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 5154 AND npcID = 48017;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 5154 AND npcID = 48044;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 5155 AND npcID = 48077;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5155 AND npcID = 48044;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 5156 AND npcID = 48052;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5156 AND npcID = 48107;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 5157 AND npcID = 48052;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5157 AND npcID = 48077;
+
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5158 AND npcID = 48010;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 5158 AND npcID = 48051;
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 5158 AND npcID = 48106;
+
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 5159 AND npcID = 48007;
+UPDATE spawnentry SET npcID = 47211 WHERE spawngroupID = 5159 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 5159 AND npcID = 48060;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5160;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5161;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5162;
+
+UPDATE spawnentry SET npcID = 47216 WHERE npcID = 48012;
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 5163 AND npcID = 48072;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 5163 AND npcID = 48116;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 5164 AND npcID = 48015;
+
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5165 AND npcID = 48025;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 5166 AND npcID = 48036;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5166 AND npcID = 48089;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5167 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5167 AND npcID = 48085;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5168 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5168 AND npcID = 48055;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5169;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5170;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5171;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5172;
+
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 5173 AND npcID = 48041;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5173 AND npcID = 48093;
+
+UPDATE spawnentry SET npcID = 47212 WHERE spawngroupID = 5174 AND npcID = 48042;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 5174 AND npcID = 48094;
+
+#skip 5175 a_living_void
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5176 AND npcID = 48016;
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 5176 AND npcID = 48017;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 5176 AND npcID = 48069;
+
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5177 AND npcID = 48044;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 5177 AND npcID = 48090;
+
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5178 AND npcID = 48017;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 5178 AND npcID = 48090;
+
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 5179 AND npcID = 48017;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 5179 AND npcID = 48046;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 5179 AND npcID = 48177;
+
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 5180 AND npcID = 48011;
+
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 5181 AND npcID = 48228;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5181 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5181 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5181 AND npcID = 48079;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 5182 AND npcID = 48009;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 5182 AND npcID = 48084;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 5183 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5183 AND npcID = 48031;
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5183 AND npcID = 48098;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 5184 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5184 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5184 AND npcID = 48089;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 5185 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5185 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5185 AND npcID = 48098;
+
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5186 AND npcID = 48031;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5186 AND npcID = 48032;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5186 AND npcID = 48085;
+
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 5187 AND npcID = 48045;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5187 AND npcID = 48099;
+
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 5188 AND npcID = 48046;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 5189 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 5189 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 5189 AND npcID = 48070;
+
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 5190 AND npcID = 48220;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 5190 AND npcID = 48012;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 5191 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 5191 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 5191 AND npcID = 48100;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 5192 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 5192 AND npcID = 48070;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5193;
+
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 5194 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 5194 AND npcID = 48060;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 5195;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5196 AND npcID = 48001;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5196 AND npcID = 48064;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5197 AND npcID = 48001;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5197 AND npcID = 48002;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 5198 AND npcID = 48002;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 5198 AND npcID = 48136;
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 5198 AND npcID = 48063;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5199 AND npcID = 48001;
+
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 5200 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 5200 AND npcID = 48086;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5200 AND npcID = 48119;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 5201 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 5201 AND npcID = 48032;
+
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5202 AND npcID = 48035;
+
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5203 AND npcID = 48023;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5204 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5204 AND npcID = 48031;
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5205 AND npcID = 48035;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5205 AND npcID = 48087;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 5206 AND npcID = 48031;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5207 AND npcID = 48031;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5207 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 5208 AND npcID = 48047;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 5208 AND npcID = 48101;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 5208 AND npcID = 48114;
+
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 5209 AND npcID = 48049;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 5209 AND npcID = 48048;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 5209 AND npcID = 48101;
+
+UPDATE spawnentry SET npcID = 47221 WHERE spawngroupID = 5210 AND npcID = 48049;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 5210 AND npcID = 48102;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5211 AND npcID = 48047;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 5211 AND npcID = 48103;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 5211 AND npcID = 48113;
+
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 5212 AND npcID = 48048;
+UPDATE spawnentry SET npcID = 47221 WHERE spawngroupID = 5212 AND npcID = 48101;
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 5212 AND npcID = 48113;
+
+#skip 5213
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 5214 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5214 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5214 AND npcID = 48088;
+
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 5215 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 5215 AND npcID = 48079;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 5216 AND npcID = 48032;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 5216 AND npcID = 48035;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 5216 AND npcID = 48105;
+
+#jump to 6042
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6042 AND npcID = 48084;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6042 AND npcID = 48035;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6043 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6043 AND npcID = 48079;
+
+UPDATE spawnentry SET npcID = 47251 WHERE spawngroupID = 6044 AND npcID = 48033;
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6044 AND npcID = 48034;
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 6044 AND npcID = 48111;
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 6044 AND npcID = 48170;
+UPDATE spawnentry SET npcID = 47221 WHERE spawngroupID = 6044 AND npcID = 48192;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 6044 AND npcID = 48219;
+
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 6045 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47221 WHERE spawngroupID = 6045 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 6045 AND npcID = 48071;
+
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 6046 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 6046 AND npcID = 48007;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6046 AND npcID = 48058;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6047 AND npcID = 48219;
+UPDATE spawnentry SET npcID = 47251 WHERE spawngroupID = 6047 AND npcID = 48034;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6047 AND npcID = 48110;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6047 AND npcID = 48153;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6047 AND npcID = 48192;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6047 AND npcID = 48170;
+
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 6048 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 6048 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6048 AND npcID = 48058;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6049 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6049 AND npcID = 48026;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6049 AND npcID = 48067;
+
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 6050 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6050 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6050 AND npcID = 48091;
+#rotting shiver back
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6051 AND npcID = 48033;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6051 AND npcID = 48078;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6052 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47248 WHERE spawngroupID = 6052 AND npcID = 48083;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6053 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6053 AND npcID = 48053;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6054 AND npcID = 48028;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6054 AND npcID = 48036;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 6054 AND npcID = 48089;
+
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6055 AND npcID = 48029;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 6055 AND npcID = 48056;
+
+UPDATE spawnentry SET npcID = 47246 WHERE spawngroupID = 6056 AND npcID = 48030;
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 6056 AND npcID = 48057;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6057 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6057 AND npcID = 48070;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6058 AND npcID = 48007;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6058 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 6058 AND npcID = 48071;
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 6059 AND npcID = 48071;
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 6059 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6059 AND npcID = 48031;
+
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 6060 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6060 AND npcID = 48032;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6060 AND npcID = 48060;
+
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6061 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6061 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6061 AND npcID = 48060;
+
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6062 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6062 AND npcID = 48070;
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6062 AND npcID = 48178;
+
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6063 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6063 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6063 AND npcID = 48071;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6063 AND npcID = 48161;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6064 AND npcID = 48027;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6064 AND npcID = 48081;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6064 AND npcID = 48165;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6065 AND npcID = 48007;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6065 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6065 AND npcID = 48058;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6066 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6066 AND npcID = 48026;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6066 AND npcID = 48060;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6066 AND npcID = 48145;
+
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6067 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6067 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6067 AND npcID = 48067;
+
+UPDATE spawnentry SET npcID = 47224 WHERE spawngroupID = 6068 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6068 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6068 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6069 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6069 AND npcID = 48019;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6069 AND npcID = 48071;
+
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6070 AND npcID = 48013;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6070 AND npcID = 48046;
+UPDATE spawnentry SET npcID = 47212 WHERE spawngroupID = 6070 AND npcID = 48059;
+
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6071 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6071 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6071 AND npcID = 48060;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6072;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6073;
+
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 6074 AND npcID = 48017;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6074 AND npcID = 48069;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6074 AND npcID = 48182;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6075;
+
+UPDATE spawnentry SET npcID = 47256 WHERE spawngroupID = 6076 AND npcID = 48001;
+UPDATE spawnentry SET npcID = 47254 WHERE spawngroupID = 6076 AND npcID = 48064;
+UPDATE spawnentry SET npcID = 47257 WHERE spawngroupID = 6076 AND npcID = 48092;
+
+UPDATE spawnentry SET npcID = 47252 WHERE spawngroupID = 6077 AND npcID = 48008;
+DELETE FROM spawnentry WHERE spawngroupID = 6077 AND npcID = 48014;
+DELETE FROM spawnentry WHERE spawngroupID = 6077 AND npcID = 48070;
+UPDATE spawnentry SET chance = 100 WHERE spawngroupID = 6077 AND npcID = 47224;
+
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 6078 AND npcID = 48025;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6078 AND npcID = 48031;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6078 AND npcID = 48079;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6079;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6080 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6080 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 6081 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 6081 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6081 AND npcID = 48100;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6082 AND npcID = 48008;
+
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 6083 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 6083 AND npcID = 48023;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6084 AND npcID = 48088;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 6084 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6084 AND npcID = 48015;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6085 AND npcID = 48013;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6085 AND npcID = 48022;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6085 AND npcID = 48062;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6086 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 6086 AND npcID = 48055;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 6086 AND npcID = 48085;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6087 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6087 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6087 AND npcID = 48085;
+
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6088 AND npcID = 48014;
+
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 6089 AND npcID = 48020;
+
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6090 AND npcID = 48019;
+
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 6091 AND npcID = 48009;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6091 AND npcID = 48018;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6091 AND npcID = 48084;
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 6091 AND npcID = 48141;
+
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 6092 AND npcID = 48017;
+
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 6093 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6093 AND npcID = 48084;
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6093 AND npcID = 48158;
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 6093 AND npcID = 48193;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6094 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6094 AND npcID = 48088;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6095;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6096 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6096 AND npcID = 48079;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6096 AND npcID = 48195;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6097 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6097 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6097 AND npcID = 48058;
+
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6100 AND npcID = 48006;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6100 AND npcID = 48013;
+
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6101 AND npcID = 48006;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6101 AND npcID = 48013;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6101 AND npcID = 48061;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6102 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6102 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6102 AND npcID = 48071;
+
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6103 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6103 AND npcID = 48060;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6104;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 6105 AND npcID = 48009;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6106 AND npcID = 48010;
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 6106 AND npcID = 48082;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 6107 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 6107 AND npcID = 48082;
+#toxiferious
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 6108 AND npcID = 48012;
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 6108 AND npcID = 48073;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6108 AND npcID = 48116;
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 6108 AND npcID = 48243;
+
+UPDATE spawnentry SET npcID = 47232 WHERE spawngroupID = 6109 AND npcID = 48012;
+UPDATE spawnentry SET npcID = 47230 WHERE npcID = 48073;
+UPDATE spawnentry SET npcID = 47233 WHERE spawngroupID = 6109 AND npcID = 48117;
+UPDATE spawnentry SET npcID = 47241 WHERE spawngroupID = 6109 AND npcID = 48183;
+
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6110 AND npcID = 48006;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6110 AND npcID = 48013;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6110 AND npcID = 48059;
+
+UPDATE spawnentry SET npcID = 47217 WHERE spawngroupID = 6111 AND npcID = 48007;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6111 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6111 AND npcID = 48058;
+
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6112 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 6112 AND npcID = 48024;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6112 AND npcID = 48060;
+
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6113 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6113 AND npcID = 48060;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6114;
+
+UPDATE spawnentry SET npcID = 47216 WHERE spawngroupID = 6115 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 6115 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47215 WHERE spawngroupID = 6115 AND npcID = 48058;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6116;
+
+UPDATE spawnentry SET npcID = 47212 WHERE spawngroupID = 6117 AND npcID = 48005;
+UPDATE spawnentry SET npcID = 47214 WHERE spawngroupID = 6117 AND npcID = 48008;
+UPDATE spawnentry SET npcID = 47213 WHERE spawngroupID = 6117 AND npcID = 48060;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 6118 AND npcID = 48003;
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 6118 AND npcID = 48068;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 6118 AND npcID = 48112;
+
+DELETE FROM spawnentry WHERE spawngroupID = 6119;
+INSERT INTO spawnentry VALUES (6119, 47255, 33);
+INSERT INTO spawnentry VALUES (6119, 47254, 33);
+INSERT INTO spawnentry VALUES (6119, 47253, 34);
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6120;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 6126;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 8049 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 8049 AND npcID = 48036;
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 8049 AND npcID = 48082;
+
+UPDATE spawnentry SET npcID = 47236 WHERE spawngroupID = 8050 AND npcID = 48011;
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 8050 AND npcID = 48053;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 8050 AND npcID = 48108;
+
+UPDATE spawnentry SET npcID = 47237 WHERE spawngroupID = 8051 AND npcID = 48053;
+UPDATE spawnentry SET npcID = 47238 WHERE spawngroupID = 8051 AND npcID = 48083;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 8052 AND npcID = 48036;
+UPDATE spawnentry SET npcID = 47247 WHERE spawngroupID = 8052 AND npcID = 48109;
+
+UPDATE spawnentry SET npcID = 47239 WHERE spawngroupID = 8053 AND npcID = 48054;
+UPDATE spawnentry SET npcID = 47247 WHERE spawngroupID = 8053 AND npcID = 48084;
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 8054 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 8054 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47243 WHERE spawngroupID = 8054 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 8055 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47243 WHERE spawngroupID = 8055 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 8056 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8056 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 8056 AND npcID = 48088;
+
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 8057 AND npcID = 48015;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8057 AND npcID = 48032;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 8057 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 8058 AND npcID = 48055;
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 8058 AND npcID = 48098;
+
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8059 AND npcID = 48025;
+UPDATE spawnentry SET npcID = 47229 WHERE spawngroupID = 8059 AND npcID = 48091;
+
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 8060 AND npcID = 48019;
+UPDATE spawnentry SET npcID = 47223 WHERE spawngroupID = 8060 AND npcID = 48071;
+
+UPDATE spawnentry SET npcID = 47226 WHERE spawngroupID = 8061 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8061 AND npcID = 48088;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 8061 AND npcID = 48171;
+UPDATE spawnentry SET npcID = 47245 WHERE spawngroupID = 8061 AND npcID = 48244;
+
+UPDATE spawnentry SET npcID = 47234 WHERE spawngroupID = 8062 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47235 WHERE spawngroupID = 8062 AND npcID = 48098;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 8063 AND npcID = 48032;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8063 AND npcID = 48035;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 8063 AND npcID = 48086;
+UPDATE spawnentry SET npcID = 47231 WHERE spawngroupID = 8063 AND npcID = 48216;
+
+UPDATE spawnentry SET npcID = 47225 WHERE spawngroupID = 8064 AND npcID = 48021;
+UPDATE spawnentry SET npcID = 47227 WHERE spawngroupID = 8064 AND npcID = 48023;
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 8064 AND npcID = 48079;
+
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 8065 AND npcID = 48020;
+UPDATE spawnentry SET npcID = 47219 WHERE spawngroupID = 8065 AND npcID = 48026;
+UPDATE spawnentry SET npcID = 47221 WHERE spawngroupID = 8065 AND npcID = 48070;
+
+UPDATE spawnentry SET npcID = 47218 WHERE spawngroupID = 8066 AND npcID = 48014;
+UPDATE spawnentry SET npcID = 47220 WHERE spawngroupID = 8066 AND npcID = 48100;
+
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 8067 AND npcID = 48034;
+UPDATE spawnentry SET npcID = 47198 WHERE spawngroupID = 8067 AND npcID = 50212;
+
+UPDATE spawnentry SET npcID = 47249 WHERE spawngroupID = 8069 AND npcID = 48080;
+UPDATE spawnentry SET npcID = 47240 WHERE spawngroupID = 8069 AND npcID = 48115;
+
+UPDATE spawnentry SET npcID = 47222 WHERE spawngroupID = 8070 AND npcID = 48097;
+
+UPDATE spawnentry SET npcID = 47228 WHERE spawngroupID = 8071 AND npcID = 48118;
+UPDATE spawnentry SET npcID = 47230 WHERE spawngroupID = 8071 AND npcID = 48159;
+
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 48624;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 13170;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 13173;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 13174;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 13175;
+UPDATE spawnentry SET chance = 0 WHERE spawngroupID = 4611;
+
+########################
+#FIX NAMED NPCS AND LOOT
+########################
+
+#Clear Hulking Gorallia from dropping Ravenscale
+UPDATE npc_types SET loottable_id = 87616 WHERE name = 'a_hulking_gorilla';
+
+#a_stone_Golem
+UPDATE lootdrop_entries SET item_id = 14314 WHERE lootdrop_id = 1816 AND item_id = 12335;
+
+#Avatar_of_Fear
+INSERT INTO lootdrop_entries VALUES (1237, 5315, 1, 1, 50);
+UPDATE lootdrop_entries SET chance = 50 WHERE lootdrop_id = 1237 AND item_id = 3164;
+UPDATE loottable SET name = 'Avatar_of_Fear' WHERE id = 555 AND name = 'A_Silverflank_Guardian';
+DELETE FROM lootdrop_entries WHERE lootdrop_id = 1237 AND item_id = 2330;
+DELETE FROM lootdrop_entries WHERE lootdrop_id = 1237 AND item_id = 3161;
+DELETE FROM lootdrop_entries WHERE lootdrop_id = 1237 AND item_id = 3170;
+
+#Cazic_Cenobite
+UPDATE lootdrop_entries SET chance = 0 WHERE lootdrop_id = 1819 AND item_id = 14312;
+
+#Tae Ew Diviner
+INSERT INTO `spawn2` VALUES (330000, 61072, 'yxtta', 0, -238.000000, 484.000000, -365.625000, 188.000000, 1200, 0, 0, 0, 1, 1, 0);
+INSERT INTO `spawnentry` VALUES (330000, 47230, 33);
+INSERT INTO `spawnentry` VALUES (330000, 47250, 34);
+INSERT INTO `spawnentry` VALUES (330000, 47251, 33);
+
+#Hulking Gorilla (No Loot)
+INSERT INTO `spawn2` VALUES (330001, 61073, 'yxtta', 0, -386.000000, 373.000000, -371.125000, 117.000000, 1200, 0, 0, 0, 1, 1, 0);
+INSERT INTO `spawnentry` VALUES (330001, 47252, 100);
+
+#a steel golem
+INSERT INTO lootdrop_entries VALUES (90557, 3170, 1, 1, 25);
+INSERT INTO lootdrop VALUES (90557, 'a_steel_golem');
+INSERT INTO loottable VALUES (8000, 'a_steel_golem', 0, 0, 0);
+INSERT INTO loottable_entries VALUES (8000, 90557, 1, 25);
+
+#spawn point for Tae Ew Diviner and his 3 placeholders, set spawn chances etc.
+INSERT INTO `spawn2` VALUES (330007, 104039, 'cazicthule', 0, 370.774506, 324.439667, 10.289495, 127.500000, 1200, 0, 0, 0, 1, 1, 0);
+INSERT INTO spawngroup VALUES (104039, 'cazicthuleTae_Ew_Diviner000960779', 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO spawnentry VALUES (104039, 47250, 33);
+INSERT INTO spawnentry VALUES (104039, 47221, 33);
+INSERT INTO spawnentry VALUES (104039, 47223, 34);
+UPDATE spawnentry SET chance = 33 WHERE npcID = 47250 AND spawngroupID = 104039;
+UPDATE spawnentry SET chance = 33 WHERE npcID = 47221 AND spawngroupID = 104039;
+UPDATE spawnentry SET chance = 34 WHERE npcID = 47223 AND spawngroupID = 104039;
+
+

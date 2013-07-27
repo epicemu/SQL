@@ -1,0 +1,114 @@
+#Droga Classic Revamp
+##A new method to repopulate a zone, randomness based on heading - Kegz
+##UPDATE spawnentry p, spawn2 pp SET p.npcID = x WHERE p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+
+alter table spawnentry drop primary key;
+CREATE index heading on spawn2 (heading);
+CREATE index spawngroupID on spawn2 (spawngroupID);
+CREATE index npcID on spawnentry (npcID);
+
+#fix goblin blightcaller
+UPDATE npc_types SET level = 33, hp = 2106, mindmg = 14, maxdmg = 76 WHERE id = 107041;
+UPDATE npc_types SET level = 34, hp = 2210, mindmg = 16, maxdmg = 78 WHERE id = 107034;
+UPDATE npc_types SET level = 36, hp = 2340, mindmg = 18, maxdmg = 80 WHERE id = 107051;
+#fix goblin taskmaster
+UPDATE npc_types SET level = 33, hp = 2212, mindmg = 16, maxdmg = 78 WHERE id = 107004;
+UPDATE npc_types SET level = 34, hp = 2345, mindmg = 18, maxdmg = 80 WHERE id = 107079;
+UPDATE npc_types SET level = 35, hp = 2480, mindmg = 22, maxdmg = 82 WHERE id = 107011;
+# NPC IDS for Droga
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 79051 WHERE p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga' AND pp.heading <= 255;
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 85100 WHERE pp.heading <= 251.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 79009 WHERE pp.heading <= 248.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 85072 WHERE pp.heading <= 244.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 79044 WHERE pp.heading <= 241.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 85101 WHERE pp.heading <= 238 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92082 WHERE pp.heading <= 234.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81164 WHERE pp.heading <= 231.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92118 WHERE pp.heading <= 227.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92005 WHERE pp.heading <= 224.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92116 WHERE pp.heading <= 221 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92132 WHERE pp.heading <= 217.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81126 WHERE pp.heading <= 214.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81127 WHERE pp.heading <= 210.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81129 WHERE pp.heading <= 207.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92003 WHERE pp.heading <= 204 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92008 WHERE pp.heading <= 200.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92031 WHERE pp.heading <= 197.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92083 WHERE pp.heading <= 193.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 162101 WHERE pp.heading <= 190.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 162140 WHERE pp.heading <= 187 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92193 WHERE pp.heading <= 183.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92195 WHERE pp.heading <= 180.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 84062 WHERE pp.heading <= 176.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92004 WHERE pp.heading <= 173.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92009 WHERE pp.heading <= 170 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92094 WHERE pp.heading <= 166.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92113 WHERE pp.heading <= 163.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92115 WHERE pp.heading <= 159.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92125 WHERE pp.heading <= 156.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92126 WHERE pp.heading <= 153 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92141 WHERE pp.heading <= 149.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81128 WHERE pp.heading <= 146.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92016 WHERE pp.heading <= 142.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92020 WHERE pp.heading <= 139.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92023 WHERE pp.heading <= 136 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92025 WHERE pp.heading <= 132.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92111 WHERE pp.heading <= 129.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107129 WHERE pp.heading <= 125.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92024 WHERE pp.heading <= 122.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92040 WHERE pp.heading <= 119 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92041 WHERE pp.heading <= 115.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92078 WHERE pp.heading <= 112.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92123 WHERE pp.heading <= 108.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92134 WHERE pp.heading <= 105.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92139 WHERE pp.heading <= 102 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92143 WHERE pp.heading <= 98.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81076 WHERE pp.heading <= 95.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81094 WHERE pp.heading <= 91.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81110 WHERE pp.heading <= 88.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81111 WHERE pp.heading <= 85 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81115 WHERE pp.heading <= 81.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81133 WHERE pp.heading <= 78.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 81134 WHERE pp.heading <= 74.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92013 WHERE pp.heading <= 71.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92017 WHERE pp.heading <= 68 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92019 WHERE pp.heading <= 64.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92053 WHERE pp.heading <= 61.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92056 WHERE pp.heading <= 57.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92138 WHERE pp.heading <= 54.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92192 WHERE pp.heading <= 51 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92018 WHERE pp.heading <= 47.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92022 WHERE pp.heading <= 44.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92054 WHERE pp.heading <= 40.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92058 WHERE pp.heading <= 37.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92064 WHERE pp.heading <= 34 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92091 WHERE pp.heading <= 30.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 92126 WHERE pp.heading <= 27.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 84240 WHERE pp.heading <= 20.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107041 WHERE pp.heading <= 17 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107034 WHERE pp.heading <= 13.6 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107051 WHERE pp.heading <= 10.2 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107004 WHERE pp.heading <= 6.8 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107079 WHERE pp.heading <= 3.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+UPDATE spawnentry p, spawn2 pp SET p.npcID = 107011 WHERE pp.heading <= 0.4 AND p.spawngroupID = pp.spawngroupID AND pp.zone = 'droga';
+
+#Insert rare and named mobs
+#Chief Rokgus and his bodyguards
+INSERT INTO spawnentry VALUES (9007,92135,10);
+UPDATE spawnentry SET chance = 90 WHERE spawngroupID = 9007 AND npcID = 92019;
+UPDATE spawnentry SET npcID = 107051 WHERE spawngroupID = 8941;
+UPDATE spawnentry SET chance = 90 WHERE spawngroupID = 8941 AND npcID = 107051;
+INSERT INTO spawnentry VALUES (8941,92187,10);
+UPDATE spawnentry SET npcID = 92022 WHERE spawngroupID = 13332;
+UPDATE spawnentry SET npcID = 92058 WHERE spawngroupID = 9030;
+#Maddened Burnai
+INSERT INTO spawnentry VALUES (8944,81130,10);
+UPDATE spawnentry SET chance = 45 WHERE spawngroupID = 8944 AND npcID = 79051;
+#Soothsayer Dregzak
+INSERT INTO Spawnentry VALUES(9051,92014,10);
+UPDATE spawnentry SET chance = 10 WHERE spawngroupID = 9051 AND chance = 20;
+#Warder
+INSERT INTO Spawnentry VALUES(13290,107140,10);
+UPDATE spawnentry SET chance = 45 WHERE spawngroupID = 13290 AND npcID = 107051;
+UPDATE lootdrop_entries SET chance = 90 WHERE item_id = 10030 AND chance = 100;
+INSERT INTO lootdrop_entries VALUES(18470,14732,1,0,10);
