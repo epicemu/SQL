@@ -1,0 +1,6 @@
+#Dreadlands reset
+UPDATE zone_points SET y = 496, x = -1948, z = 30 WHERE id = 1208;
+UPDATE zone_points SET y = 702, x = -1948, z = 30 WHERE id = 1209;
+#Karnor reset
+UPDATE zone_points SET y = 115, x = 389, z = 0 WHERE id = 1247;
+UPDATE zone_points SET y = -82, x = 389, z = 0 WHERE id = 1248;

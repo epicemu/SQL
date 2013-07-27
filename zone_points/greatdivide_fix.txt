@@ -1,0 +1,3 @@
+#Remove PoM zonepoint
+	DELETE FROM zone_points WHERE id = 619;
+	DELETE FROM doors WHERE id = 8047;

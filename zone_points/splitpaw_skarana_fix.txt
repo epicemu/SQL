@@ -1,0 +1,7 @@
+#zoneline fix
+UPDATE zone_points SET target_y = -114 WHERE id = 27;
+UPDATE zone_points SET target_x = 60 WHERE id = 27;
+UPDATE zone_points SET target_z = 5 WHERE id = 27;
+UPDATE zone_points SET target_heading = 223 WHERE id = 27;
+
+UPDATE zone_points SET target_z = -6.9 WHERE id = 970;

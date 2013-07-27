@@ -1,0 +1,5 @@
+#Fix location of zone-in from Nro to Iceclad
+UPDATE zone_points SET target_y = 3768 WHERE id = 689 AND zone = 'nro';
+UPDATE zone_points SET target_x = -21034.00 WHERE id = 689 AND zone = 'nro';
+#Set boat to wait at grid location
+UPDATE grid_entries SET pause = 120 WHERE gridid = 53 AND zoneid = 110 AND number = 22;
