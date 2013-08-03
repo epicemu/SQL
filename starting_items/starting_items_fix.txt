@@ -1,0 +1,28 @@
+#remove GloomingDeep Lantern, Reduce Food / Drink / Bandage
+UPDATE starting_items SET itemid = 0 WHERE itemid = 9979;
+UPDATE starting_items SET item_charges = 5 WHERE item_charges = 20;
+
+#Necro Spell Fix - Siphon Strength > Minor Shielding
+UPDATE starting_items SET itemid = 9986 WHERE class = 11 AND itemid = 15343;
+
+#Shaman Spell Fix - Burst of Flame > Inner Fire
+UPDATE starting_items SET itemid = 9983 WHERE class = 10 AND itemid = 15093;
+
+#Wizard Sepll Fix - Blast of Cold > Shock of Frost;
+UPDATE starting_items SET itemid = 9988 WHERE class = 12 AND itemid = 15372;
+
+#Human Newb Notes
+	#ENC - Innoruk
+	INSERT INTO starting_items VALUES ('',1,14,206,10,18856,1,0,-1);
+	#ENC - Bertoxx
+	INSERT INTO starting_items VALUES ('',1,14,201,45,18851,1,0,-1);
+	#MAG - Innoruk
+	INSERT INTO starting_items VALUES ('',1,13,206,10,18855,1,0,-1);
+	#MAG - Bertoxx
+	INSERT INTO starting_items VALUES ('',1,13,201,45,18850,1,0,-1);
+	#NEC - Innoruk
+	INSERT INTO starting_items VALUES ('',1,11,206,10,18739,1,0,-1);
+	#WIZ - Bertoxx
+	INSERT INTO starting_items VALUES ('',1,12,201,45,18852,1,0,-1);
+	#WIZ - Innoruk
+	INSERT INTO starting_items VALUES ('',1,12,206,10,18854,1,0,-1);

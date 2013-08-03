@@ -1,0 +1,2 @@
+#Hateplane Fix
+UPDATE spells_new SET teleport_zone = 'hateplane' where id = 666;

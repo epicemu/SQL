@@ -1,0 +1,6 @@
+#Add rat ear pie tradeskill
+INSERT INTO tradeskill_recipe VALUES (12813,'Rat Ear Pie',60,0,142,0,0,'EpicEmu.com',0,0);
+INSERT INTO tradeskill_recipe_entries VALUES ('',12813,13192,1,0,0,0);
+INSERT INTO tradeskill_recipe_entries VALUES ('',12813,13191,0,0,1,0);
+INSERT INTO tradeskill_recipe_entries VALUES ('',12813,17947,0,0,0,1);
+INSERT INTO tradeskill_recipe_entries VALUES ('',12813,17164,0,0,0,1);

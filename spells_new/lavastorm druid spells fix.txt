@@ -1,0 +1,10 @@
+#Lavastorm (Classic) Druid Ring Port In Fix
+UPDATE spells_new SET effect_base_Value1 = 992 WHERE id = 534;
+UPDATE spells_new SET effect_base_Value2 = 1330 WHERE id = 534;
+UPDATE spells_new SET effect_base_Value3 = 125 WHERE id = 534;
+UPDATE spells_new SET effect_base_Value1 = 992 WHERE id = 554;
+UPDATE spells_new SET effect_base_Value2 = 1330 WHERE id = 554;
+UPDATE spells_new SET effect_base_Value3 = 125 WHERE id = 554;
+UPDATE spells_new SET effect_base_Value1 = 992 WHERE id = 610;
+UPDATE spells_new SET effect_base_Value2 = 1330 WHERE id = 610;
+UPDATE spells_new SET effect_base_Value3 = 125 WHERE id = 610;
