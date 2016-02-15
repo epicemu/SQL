@@ -1,0 +1,22 @@
+#Remove all Augmentation pools from view
+UPDATE object SET zpos = -1000 WHERE type = 53; 
+##IDS of pools removed
+#360
+#22335
+#22336
+#22339
+#22340
+#65616
+#69136
+#227762
+#227763
+#227766
+#227778
+#227828
+#227829
+#227841
+#227861
+#227925
+#228147
+#228148
+#228155
